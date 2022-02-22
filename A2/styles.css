@@ -1,0 +1,24 @@
+ol.outer-items {
+    font-family: Verdana;
+    list-style-type: upper-roman;
+}
+
+ol.middle-items {
+    list-style-type: upper-alpha;
+}
+
+ol.inner-items {
+    list-style-type: decimal;
+}
+
+li.outer-items-compact-cars {
+    background-color: lightpink;
+}
+
+li.outer-items-midsize-cars {
+    background-color: dodgerblue;
+}
+
+li.outer-items-sports-cars {
+    background-color: crimson;
+}

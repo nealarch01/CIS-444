@@ -1,0 +1,27 @@
+table#fib-table {
+    background-color: aliceblue;
+    border-collapse: collapse;
+    font-family: Verdana;
+    font-size: 20px;
+}
+
+td {
+    padding-right: 50px;
+    padding-left: 50px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+}
+
+th {
+    padding-right: 50px;
+    padding-left: 50px;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+}
+
+h2.webpage-header-text {
+    font-family: Verdana;
+}
