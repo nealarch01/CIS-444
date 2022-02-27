@@ -31,7 +31,7 @@ function calculateSubTotal() {
     Fruits.forEach((element) => {
         subTotal += (element.quantity * element.price);
     });
-    console.log(subTotal);
+    // console.log(subTotal);
     return subTotal;
 }
 
