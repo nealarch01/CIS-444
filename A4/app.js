@@ -95,7 +95,7 @@ bananasInput.addEventListener('input', (event) => {
 
 
 // event listener for submit button
-document.getElementById('submit-button').addEventListener('click', function() {
+document.getElementById('submit-button').addEventListener('click', () => {
     alert(`Your total is: ${calculateTotal()}`);
-    return false;
+    return false; // return false to not submit form
 });
