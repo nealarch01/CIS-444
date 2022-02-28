@@ -14,7 +14,7 @@ input.fruit-input-box:hover {
 
 input.fruit-input-box:focus {
     box-shadow: 10px 0px 19px -9px rgba(0,0,0,0.90);
-    outline-width: 0px;
+    outline: none;
 }
 
 label {
