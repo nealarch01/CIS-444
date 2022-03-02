@@ -53,49 +53,39 @@ function resetInputbox(doc_obj) {
     doc_obj.style.borderColor = 'black';
 }
 
-const submitButton = document.getElementById('submit-button');
-const applesInput = document.getElementById('apples-input');
-const orangesInput = document.getElementById('oranges-input');
-const bananasInput = document.getElementById('bananas-input');
 
-// using es6 arrows for event handler functions
-applesInput.addEventListener('input', (event) => {
-    // check if text inside text box is valid
-    if (!isInputValid(applesInput.value)) { // not valid
-        Fruits.get('apple').quantity = 0; // set quantity of fruit to 0
-        // ternary operator // if empty then set text box border color to be black // otherwise, set to red (invalid input)
-        (applesInput.value === '') ? resetInputbox(applesInput) : setInputBoxInvalid(applesInput); 
-        return;
+// input has to be input checked before passing the parameter
+function updateFruits(key, input) {
+    if (typeof(input) === 'string') input = parseInt(input);
+    if (!Fruits.has(key)) return;
+    Fruits.get(key).quantity = input;
+}
+
+const MainForm = document.getElementById('main-form');
+
+// using JavaScript ES6 arrow for event handler function
+MainForm.addEventListener('input', (event) => {
+    var inputBoxID = event.target.getAttribute('id'); // get the ID (which is the fruit name) of the text box
+    if(!isInputValid(event.target.value)) {
+        if(event.target.value === '') resetInputbox(document.getElementById(inputBoxID));
+        else setInputBoxInvalid(document.getElementById(inputBoxID));
+        updateFruits(inputBoxID, 0); // set to zero to not charge user if input is invalid
+    } else {
+        updateFruits(inputBoxID, event.target.value);
+        setInputBoxValid(document.getElementById(inputBoxID));
     }
-    setInputBoxValid(applesInput);
-    Fruits.get('apple').quantity = parseInt(applesInput.value);
 });
 
-// oranges text box
-orangesInput.addEventListener('input', (event) => {
-    if (!isInputValid(orangesInput.value)) {
-        Fruits.get('orange').quantity = 0;
-        (orangesInput.value === '') ? resetInputbox(orangesInput) : setInputBoxInvalid(orangesInput);
-        return;
+// event listener that handles if the submit button is pressed
+MainForm[MainForm.length - 1].addEventListener('click', () => {
+    // console.log('Button was clicked');
+    alert(`Your total is: ${calculateTotal()}`)
+    MainForm.onsubmit = () => {
+        return false;
     }
-    setInputBoxValid(orangesInput);
-    Fruits.get('orange').quantity = parseInt(orangesInput.value)
 });
 
-// bananas text box
-bananasInput.addEventListener('input', (event) => {
-    if (!isInputValid(bananasInput.value)) {
-        Fruits.get('banana').quantity = 0;
-        (bananasInput.value === '') ? resetInputbox(bananasInput) : setInputBoxInvalid(bananasInput);
-        return;
-    }
-    setInputBoxValid(bananasInput);
-    Fruits.get('banana').quantity = parseInt(bananasInput.value);
-});
-
-
-// event listener for submit button
-document.getElementById('submit-button').addEventListener('click', () => {
-    alert(`Your total is: ${calculateTotal()}`);
-    return false; // return false to not submit form
-});
+// onsubmit, prevent false to not submit
+MainForm.onsubmit = () => {
+    return false;
+}
