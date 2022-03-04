@@ -80,12 +80,9 @@ MainForm.addEventListener('input', (event) => {
 MainForm[MainForm.length - 1].addEventListener('click', () => {
     // console.log('Button was clicked');
     alert(`Your total is: ${calculateTotal()}`)
-    MainForm.onsubmit = () => {
-        return false;
-    }
 });
 
-// onsubmit, prevent false to not submit
+// onsubmit, return false to prevent submission of data
 MainForm.onsubmit = () => {
     return false;
 }
