@@ -25,7 +25,7 @@ label {
     font-weight: bold;
 }
 
-button.action-btn {
+.submit-btn {
     width: 90px;
     height: 35px;
     background-color: #68bf04;
@@ -37,11 +37,11 @@ button.action-btn {
     box-shadow: 10px 0px 19px -10px rgba(0,0,0,0.60);
 }
 
-button.action-btn:hover {
+.submit-btn:hover {
     background-color: #70cf04;
 }
 
-button.action-btn:active {
+.submit-btn:active {
     width: 92px;
     height: 36px;
 }

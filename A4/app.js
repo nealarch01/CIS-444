@@ -1,21 +1,30 @@
-const Fruits = new Map();
+const Fruits = new Map(); // map data structure that will hold fruit objects
 
+// Fruit object is as follows:
+/*
+    FruitType: {
+        quantity: number,
+        price: number
+    }
+*/
+
+// put all fruits into the map
 Fruits.set('apple', {
-    'quantity': 0,
-    'price': 0.89
+    quantity: 0,
+    price: 0.89
 });
 
 Fruits.set('orange', {
-    'quantity': 0,
-    'price': 0.69
+    quantity: 0,
+    price: 0.69
 });
 
 Fruits.set('banana', {
-    'quantity': 0,
-    'price': 0.49
+    quantity: 0,
+    price: 0.49
 });
 
-
+// function validates input string using regular expression
 function isInputValid(input) {
     const input_regex = /^([0]+)?\d{1,2}$/;
     // regex explanation:
@@ -41,14 +50,17 @@ function calculateTotal() {
     return total.toFixed(2);
 }
 
+// function that sets the input box border color to red when an input that doesn't match regular expression is typed into input box
 function setInputBoxInvalid(doc_obj) {
     doc_obj.style.borderColor = '#FF3131';
 }
 
+// function that sets the input box border color to green when an input that matches regular expression is typed into the input box
 function setInputBoxValid(doc_obj) {
     doc_obj.style.borderColor = '#66FF00';
 }
 
+// function that sets the input box to black if there is no input
 function resetInputbox(doc_obj) {
     doc_obj.style.borderColor = 'black';
 }
@@ -64,25 +76,27 @@ function updateFruits(key, input) {
 const MainForm = document.getElementById('main-form');
 
 // using JavaScript ES6 arrow for event handler function
+// event listener to handle when a typed input is detected in one of the input boxes
 MainForm.addEventListener('input', (event) => {
     var inputBoxID = event.target.getAttribute('id'); // get the ID (which is the fruit name) of the text box
-    if(!isInputValid(event.target.value)) {
-        if(event.target.value === '') resetInputbox(document.getElementById(inputBoxID));
-        else setInputBoxInvalid(document.getElementById(inputBoxID));
-        updateFruits(inputBoxID, 0); // set to zero to not charge user if input is invalid
+    // event.target is the reference to the element whose event was triggered
+    if(!isInputValid(event.target.value)) { // check if the input inside the text box is avlid
+        if(event.target.value === '') resetInputbox(document.getElementById(inputBoxID)); // if the string is empty, instead of setting borderColor to red, turn it to black (default color)
+        else setInputBoxInvalid(document.getElementById(inputBoxID)); // otherwise, if invalid input (not an empty string), set border color to red
+        updateFruits(inputBoxID, 0); // set to zero to not charge user if input is invalid, we will not charge anything for invalid inputs (including empty string)
     } else {
-        updateFruits(inputBoxID, event.target.value);
-        setInputBoxValid(document.getElementById(inputBoxID));
+        updateFruits(inputBoxID, event.target.value); // since the input is valid, set the fruit quantity on the map to that of the input entered
+        setInputBoxValid(document.getElementById(inputBoxID)); // make input box color green
     }
 });
 
-// event listener that handles if the submit button is pressed
+// event listener that handles when the submit button is pressed
 MainForm[MainForm.length - 1].addEventListener('click', () => {
     // console.log('Button was clicked');
     alert(`Your total is: ${calculateTotal()}`)
 });
 
-// onsubmit, return false to prevent submission of data
+// onsubmit, return false to prevent submission of form data
 MainForm.onsubmit = () => {
     return false;
 }
