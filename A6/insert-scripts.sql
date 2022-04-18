@@ -1,0 +1,5 @@
+INSERT INTO Teams (teamID, teamName, startYear, ownerName, GMName, coachName, MVP, arenaAddress, city, state, zipCode, phone, divWins, divLoses, confWins, confLoses, overallWins, overallLoses) 
+VALUES (0, 'Lakers', 1946, 'Buss Family Trust', 'Rob Pelinka', 'Frank Vogel', 'LeBron James', '1111 S Figueroa St', 'Los Angeles', 'CA', 90015, '(213)742-7100', 3, 13, 18, 34, 33, 49);
+VALUES (1, 'Bucks', 1968, 'Wes Edens', 'Jon Horst', 'Mike Budenholzer', 'Giannis Antetokounmpo', '1111 Vel R. Phillips Ave', 'Milwaukee', 'WI', 53203, '(414)227-0504', 12, 4, 33, 19, 51, 31);
+VALUES (2, 'Warriors', 1946, 'Joe Lacob', 'Bob Myers', 'Steve Kerr', 'Stephen Curry', '7000 Coliseum Way', 'Oakland', 'CA', 94621, '(510)569-2121', 12, 4, 33, 19, 53, 29);
+VALUES (3, 'Suns', 1946, 'Robert Sarver', 'James Jones', 'Monty Williams', 'Devin Booker', '201 E Jefferson St', 'Phoenix', 'AZ', 90015, '(602)379-7800', 10, 6, 39, 13, 64, 18);

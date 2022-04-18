@@ -1,0 +1,1 @@
+CREATE TABLE Teams (teamID int, teamName varchar(50), startYear int, ownerName varchar(80), GMName varchar(80), coachName varchar(80), MVP varchar(80), arenaAddress varchar(110), city varchar(50), state char(2), zipCode int, phone varchar(15), divWins int, divLoses int, confWins int, confLoses int, overallWins int, overallLoses int, primary key(teamID));
