@@ -53,17 +53,8 @@
                     }
                 echo "</tr>";
             }
-            /*
-            // $allRowData = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
-            $allRowData = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
-            foreach($allRowData as $singleRow) {
-                foreach($singleRow as $element) {
-                    echo "<br>{$element}";
-                }
-                echo "<br>";
-            }
-            */
             echo "</table>";
+            mysqli_close($mySQLDB);
         ?>
         </h3>
     </div>
