@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NBA Teams</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h2 class="main-header">NBA Teams</h2>
+        <form action="nba-team.php" method="POST">
+            <label class="label-text" for="input-box">Enter the number of wins</label>
+            <br>
+            <input type="text" id="input-box" name="wins" placeholder="Enter the number of wins to lookup">
+            <p id="invalid-input-text"></p>
+            <input type="submit" id="submit-form-button" name="submit-button">
+        </form>
+    </div>
+    <script src="./input-validator.js" type="text/javascript"></script>
+</body>
+
+</html>
