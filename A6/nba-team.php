@@ -11,10 +11,12 @@
         <?php
             $winsInput = $_POST["wins"];
             echo "Teams with {$winsInput} or more wins";
-            $mySQLDB = mysqli_connect('localhost', 'root', '12345');
-            if (!$mySQLDB) {
-                echo "<br>There was an error doing a query";
-                mysqli_close($mySQLDB);
+
+            // mysqli_connect throws an exception, using try catch block to handle exception thrown
+            try {
+                $mySQLDB = mysqli_connect('localhost', 'root', '12345');
+            } catch (mysqli_sql_exception) {
+                echo "<br>There was an accessing the database";
                 exit;
             }
 
@@ -48,6 +50,7 @@
             while ($singleRowData = mysqli_fetch_assoc($queryResult)) {
                 echo "<tr>";
                     foreach ($singleRowData as $value) {
+                        $value = htmlspecialchars($value);
                         echo "<td> {$value} </td>";
                     }
                 echo "</tr>";
