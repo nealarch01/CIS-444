@@ -11,20 +11,16 @@
         <?php
             $winsInput = $_POST["wins"];
             echo "<h2 class=\"main-header\">Teams with {$winsInput} or more wins</h2>";
-            // mysqli_connect throws an exception, using try catch block to handle exception thrown
-            try {
-                $mySQLDB = mysqli_connect('localhost', 'root', '12345');
-            } catch (mysqli_sql_exception) {
-                echo "<br>There was an accessing the database";
-                exit;
+            $mySQLDB = mysqli_connect('localhost', 'root', '12345');
+
+            if (!$mySQLDB) {
+                die("<br><h2 class=\"main-header\">There was an error connecting to the database</h2>");
             }
 
-            // using try catch exception block since mysqli_select_db throws an exception and cannot be caught by an if statement
-            try {
-                $selectedDB = mysqli_select_db($mySQLDB, "Assignment6");
-            } catch (mysqli_sql_exception) {
-                echo "<br>There was an error selecting the database";
-                exit;
+            $selectedDB = mysqli_select_db($mySQLDB, "Assignment6");
+            
+            if (!$selectedDB) {
+                die("<br><h2 class=\"main-header\">There was an error selecting database</h2>");
             }
 
             $queryString = "SELECT * FROM Teams WHERE overallWins >= {$winsInput}";
@@ -33,7 +29,7 @@
 
             // do not print the table if there are not results found
             if ($numberOfResults == 0) {
-                echo "<br>There are no teams with {$winsInput} wins or more";
+                echo "<br><h2 class=\"main-header\">There are no teams with {$winsInput} wins or more</h2>";
                 exit;
             }
 
