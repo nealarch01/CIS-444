@@ -10,8 +10,7 @@
         <h3 class="main-header"> 
         <?php
             $winsInput = $_POST["wins"];
-            echo "Teams with {$winsInput} or more wins";
-
+            echo "<h2 class=\"main-header\">Teams with {$winsInput} or more wins</h2>";
             // mysqli_connect throws an exception, using try catch block to handle exception thrown
             try {
                 $mySQLDB = mysqli_connect('localhost', 'root', '12345');
