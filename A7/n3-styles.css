@@ -1,0 +1,22 @@
+car {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+car > * {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+make, model, year, color, number_of_doors, transmission_type {
+    color: #3E2F5B;
+}
+
+engine > * {
+    color: #E0CA3C;
+}
+
+accessories > * {
+    color: #F34213;
+}

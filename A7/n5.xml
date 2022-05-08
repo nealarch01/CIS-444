@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="./n5-xstyles.xsl" type="text/xsl"?>
+
+<catalog>
+    <car>
+        <make>Mazda</make>
+        <model>Miata</model>
+        <year>2022</year>
+        <color>White</color>
+        <engine>
+            <number_of_cylinders>4</number_of_cylinders>
+            <fuel_system>Fuel Injected</fuel_system>
+        </engine>
+        <number_of_doors>2</number_of_doors>
+        <transmission_type>6-Speed Manual</transmission_type>
+        <accessories>
+            Radio: <radio>Yes</radio>
+            AC: <air_conditioning>Yes</air_conditioning>
+            Power Windows: <power_windows>Yes</power_windows>
+            Power Steering: <power_steering>Yes</power_steering>
+            Power Brakes: <power_brakes>Yes</power_brakes>
+        </accessories>
+    </car>
+
+    <car>
+        <make>Toyota</make>
+        <model>Supra</model>
+        <year>2020</year>
+        <color>Silver</color>
+        <engine>
+            <number_of_cylinders>4</number_of_cylinders>
+            <fuel_system>Fuel Injected</fuel_system>
+        </engine>
+        <number_of_doors>2</number_of_doors>
+        <transmission_type>8-Speed Automatic</transmission_type>
+        <accessories>
+            Radio: <radio>Yes</radio>
+            AC: <air_conditioning>Yes</air_conditioning>
+            Power Windows: <power_windows>Yes</power_windows>
+            Power Steering: <power_steering>Yes</power_steering>
+            Power Brakes: <power_brakes>Yes</power_brakes>
+        </accessories>
+    </car>
+
+    <car>
+        <make>Honda</make>
+        <model>Civic</model>
+        <year>2022</year>
+        <color>Silver</color>
+        <engine>
+            <number_of_cylinders>4</number_of_cylinders>
+            <fuel_system>Fuel Injected</fuel_system>
+        </engine>
+        <number_of_doors>4</number_of_doors>
+        <transmission_type>5-Speed Automatic</transmission_type>
+        <accessories>
+            Radio: <radio>Yes</radio>
+            AC: <air_conditioning>Yes</air_conditioning>
+            Power Windows: <power_windows>Yes</power_windows>
+            Power Steering: <power_steering>Yes</power_steering>
+            Power Brakes: <power_brakes>Yes</power_brakes>
+        </accessories>
+    </car>
+
+</catalog>
